@@ -16,7 +16,7 @@ Python 3.6 or higher
 Telegram Bot API Token
 HugChat credentials (email and password)
 telebot and hugchat Python libraries
-You can install the required libraries using pip
+You can install the required libraries using 
 pip install telebot 
 pip install hugchat
 You can then clone the repo and then Edit the code to set up your Telegram bot token and HugChat credentials. Replace the following placeholders in the code:
