@@ -3,7 +3,7 @@ from hugchat import hugchat
 from hugchat.login import Login
 
 # Set up the Telegram bot
-bot = telebot.TeleBot("6429775362:AAH3Bau-1gs4RZAI1dukRrDcYUShrvh4KkU")  # Replace with your Telegram bot token
+bot = telebot.TeleBot("6966056998:AAGjfd04v967cq1Gn7qcl95HmGbIsLpxa3Y")  # Replace with your Telegram bot token
 
 # Initialize the hugchat chatbot
 sign = Login("jsila380@gmail.com", "u_ks~8/ZH)Xj*M7")
