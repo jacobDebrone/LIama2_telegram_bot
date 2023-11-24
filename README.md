@@ -25,3 +25,5 @@ You can then clone the repo and then Edit the code to set up your Telegram bot t
 "Your Email" with your your  email registered on huggingface
 "Your password from Huggingface" with your Huggingface password 
 you can then run the main file python Telehug.py
+the bot code gives access to Llama by default
+for more info look at the Hugchat library documentation https://pypi.org/project/hugchat/
