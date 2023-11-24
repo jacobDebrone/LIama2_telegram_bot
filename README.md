@@ -1,14 +1,7 @@
 Project Overview
 
 This project exemplifies the development of a Telegram chatbot utilizing the HugChat library to facilitate sophisticated AI-driven conversations. The chatbot seamlessly interacts with users in real-time, exchanging messages through the Telegram platform.
-Table of Contents
 
-    Prerequisites
-    Getting Started
-    Usage
-    Customization
-    Contributing
-    License
 
 Prerequisites
 
@@ -31,6 +24,8 @@ Clone the repository and edit the code to set up your Telegram bot token and Hug
     "YOUR_BOT_TOKEN" with your Telegram bot token
     "Your Email" with your email registered on Huggingface
     "Your password from Huggingface" with your Huggingface password
+     Run the main file:
+     python Telehug.py
 
 Run the main file:
 python Telehug.py
