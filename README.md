@@ -1,4 +1,5 @@
-Project Overview
+LIama telegram chatbot
+
 
 This project exemplifies the development of a Telegram chatbot utilizing the HugChat library to facilitate sophisticated AI-driven conversations. The chatbot seamlessly interacts with users in real-time, exchanging messages through the Telegram platform.
 
