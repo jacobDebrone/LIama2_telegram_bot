@@ -24,7 +24,10 @@ Python 3.6 or higher
 Telegram Bot API Token
 
 
-HugChat credentials (email and password)
+HugChat credentials (email and password) <your simple Huggingface email and password
+if you dont have a Huggingface account go to https://huggingface.co/join
+
+then enter the email and password where required in the code 
 
 
 Required Python libraries: telebot and hugchat
