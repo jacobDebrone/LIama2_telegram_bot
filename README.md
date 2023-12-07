@@ -73,3 +73,5 @@ Copy code
  HugChat Documentation https://pypi.org/project/hugchat/
 
  Thank you for choosing the Llama Telegram Chatbot project. If you have any questions or need further assistance, feel free to explore the documentation or reach out to our support channels. Happy chatting!
+
+Dont forget to star my repo , am just starting out in python and I would really appreciate the support
