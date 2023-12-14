@@ -1,3 +1,19 @@
+import subprocess
+
+def install_libraries():
+    try:
+        # Install required libraries using pip
+        subprocess.check_call(['pip', 'install', 'telebot', 'hugchat'])
+
+        # Print a message indicating successful installation
+        print("Libraries installed successfully.")
+    except subprocess.CalledProcessError as e:
+        # Print an error message if the installation fails
+        print(f"Error installing libraries: {e}")
+        
+
+# Call the install_libraries function before importing other modules
+install_libraries()
 import telebot
 from hugchat import hugchat
 from hugchat.login import Login
@@ -8,14 +24,17 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 # Set up the Telegram bot
-bot_token = "Token"
+#set telegram_bot token
+
+bot_token = "Bot_token"
 bot = telebot.TeleBot(bot_token)
 chatbot = None
 def initialize_chatbot():
     global chatbot
     try:
+        sign = Login("Huggingface_email", "Huggingface_password")
         # Initialize the HugChat chatbot
-        sign = Login("Huggingfcace_email", "Huggingface_password")
+     
         cookies = sign.login()
         sign.saveCookiesToDir()
         chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
@@ -49,7 +68,6 @@ def handle_all_messages(message):
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         traceback.print_exc()
-        reconnect_and_handle_errors()
 
 def handle_message(message):
     user_input = message.text
@@ -66,6 +84,7 @@ def handle_message(message):
     previous_chunk = None
     for chunk in chunks:
         if chunk != previous_chunk:
+            bot.send_chat_action(message.chat.id, 'typing')
             bot.send_message(message.chat.id, chunk)
             previous_chunk = chunk
 
@@ -73,18 +92,6 @@ def handle_message(message):
 @bot.message_handler(commands=['start'])
 def handle_start(message):
     bot.send_message(message.chat.id, "Welcome to the AI chatbot. You can start by typing your message.")
-
-def reconnect_and_handle_errors():
-    global bot
-    while True:
-        try:
-            bot.stop_polling()
-            bot = telebot.TeleBot(bot_token)
-            bot.infinity_polling(timeout=30, long_polling_timeout=5)
-        except Exception as e:
-            print(f"Reconnection failed: {e}")
-            traceback.print_exc()
-            time.sleep(10)
 # Start the bot
 try:
     bot.infinity_polling(timeout=30, long_polling_timeout=5)
@@ -92,4 +99,4 @@ except Exception as e:
     print(f"An error occurred: {e}")
     traceback.print_exc()
     initialize_chatbot()
-    reconnect_and_handle_errors()
+    time.sleep(5)
